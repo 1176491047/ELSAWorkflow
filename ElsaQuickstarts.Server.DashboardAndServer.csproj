@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\vsky\ElsaQuickstarts.Server.DashboardAndServer\ElsaQuickstarts.Server.DashboardAndServer.xml</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FakesAssemblies\**" />
+    <Content Remove="FakesAssemblies\**" />
+    <EmbeddedResource Remove="FakesAssemblies\**" />
+    <None Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elsa" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Activities.Email" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Activities.Http" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Activities.Temporal.Quartz" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Designer.Components.Web" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.Oracle" Version="2.4.1" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.PostgreSql" Version="2.4.1" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.SqlServer" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Server.Api" Version="2.4.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.11.230815" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="5.21.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Topshelf" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="JQ\" />
+    <Folder Include="Package\" />
+    <Folder Include="Pages\logo\" />
+    <Folder Include="新文件夹\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

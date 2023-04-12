@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ElsaQuickstarts.Server.DashboardAndServer</name>
+    </assembly>
+    <members>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Activities.Business.WipAndOutputDataConvert.OnResume(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            恢复时
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.HttpEndpoint_New.Path">
+            <summary>
+            The path that triggers this activity. 
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.HttpEndpoint_New.Methods">
+            <summary>
+            The HTTP methods that triggers this activity.
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.HttpEndpoint_New.ReadContent">
+            <summary>
+            A value indicating whether the HTTP request content body should be read and stored as part of the HTTP request model.
+            The stored format depends on the content-type header.
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.HttpEndpoint_New.TargetType">
+            <summary>
+            The <see cref="T:System.Type"/> to parse the received request content into if <seealso cref="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.HttpEndpoint_New.ReadContent"/> is set to true.
+            If not set, the content will be parse into a default type, depending on the parser associated with the received content-type header.
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Activities.MessageHandling.FileHandling.OnResume(Elsa.Services.Models.ActivityExecutionContext)">
+            <summary>
+            恢复时
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.MessageHandling.MessageInfo.MessageBodyType">
+            <summary>
+            text image
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.SmtpPort">
+            <summary>
+            SmtpPort
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.SenderAccount">
+            <summary>
+            SenderAccount
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.SmtpHost">
+            <summary>
+            SmtpHost
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.SenderPassword">
+            <summary>
+            SenderPassword
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.From">
+            <summary>
+            发件人
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.To">
+            <summary>
+            收件人
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.Cc">
+            <summary>
+            抄送
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.Bcc">
+            <summary>
+            秘抄
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.Attachments">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.AttachmentsBody">
+            <summary>
+            附件主体
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.Body">
+            <summary>
+            邮件主体
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.FileLastName">
+            <summary>
+            后缀名
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.FileName">
+            <summary>
+            附件名称
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail.SendMailWithSMTPConfig.ImageIsAttachment">
+             <summary>
+            图片为附件
+             </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiChatActivity">
+            <summary>
+            企业微信群消息推送
+            </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiChatActivityWithContentType">
+            <summary>
+            企业微信群消息推送
+            </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinHelper">
+            <summary>
+            微信帮助类
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinHelper.SendWeiChatRobotMessage(System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.Generic.List{System.String},System.Collections.Generic.List{ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.MessageAttachmentsDto})">
+            <summary>
+            发送微信机器人消息
+            </summary>
+            <param name="msgType">发送类型</param>
+            <param name="receivers">接收人</param>
+            <param name="url">发送地址</param>
+            <param name="title">消息标题</param>
+            <param name="content">消息内容</param>
+            <param name="messageUrl">消息连接</param>
+            <param name="pictureUrl">图片地址</param>
+            <param name="messageAttachmentsDto">附件</param>
+            <param name="fileType">文件类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinHelper.UploadFiles(System.String,System.Collections.Generic.List{ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.MessageAttachmentsDto},System.Int32)">
+            <summary>
+            上传文件到微信
+            </summary>
+            <param name="url"></param>
+            <param name="messageAttachmentsDto"></param>
+            <param name="fileType"></param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinHelper.SendFiles(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            发送文件
+            </summary>
+            <param name="url"></param>
+            <param name="mediaIds"></param>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinMsgType.Text">
+            <summary>
+            文本消息
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinMsgType.MarkDown">
+            <summary>
+            markdown类型
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinMsgType.Image">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinMsgType.News">
+            <summary>
+            图文类型
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinMsgType.File">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.WeiXinMsgType.TemplateCard">
+            <summary>
+            模版卡片类型
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.FileType.image">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.FileType.voice">
+            <summary>
+            语音
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.FileType.video">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="F:ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.FileType.file">
+            <summary>
+            文件，目前只有file有效，其余都不行
+            </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity">
+            <summary>
+            邮件内容实体
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.MailBodyType">
+            <summary>
+            邮件内容类型
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.MailFiles">
+            <summary>
+            邮件附件集合
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.Recipients">
+            <summary>
+            收件人
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.Cc">
+            <summary>
+            抄送
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.Bcc">
+            <summary>
+            密送
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.SenderAddress">
+            <summary>
+            发件人地址
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.Subject">
+            <summary>
+            邮件主题
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity.Body">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailFile.MailFileType">
+            <summary>
+            邮件附件文件类型 例如：图片 MailFileType="image"
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailFile.MailFileSubType">
+            <summary>
+            邮件附件文件子类型 例如：图片 MailFileSubType="png"
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailFile.MailFilePath">
+            <summary>
+            邮件附件文件路径  例如：图片 MailFilePath=@"C:\Files\123.png"
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailHelper.SendMail(ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="mailBodyEntity">邮件基础信息</param>
+            <param name="sendServerConfiguration">发件人基础信息</param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailHelper.Connection(ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity,MailKit.Net.Smtp.SmtpClient,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendResultEntity)">
+            <summary>
+            连接服务器
+            </summary>
+            <param name="mailBodyEntity">邮件内容</param>
+            <param name="sendServerConfiguration">发送配置</param>
+            <param name="client">客户端对象</param>
+            <param name="sendResultEntity">发送结果</param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailHelper.Authenticate(ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity,MailKit.Net.Smtp.SmtpClient,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendResultEntity)">
+            <summary>
+            账户认证
+            </summary>
+            <param name="mailBodyEntity">邮件内容</param>
+            <param name="sendServerConfiguration">发送配置</param>
+            <param name="client">客户端对象</param>
+            <param name="sendResultEntity">发送结果</param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailHelper.Send(ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity,MailKit.Net.Smtp.SmtpClient,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendResultEntity)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="mailBodyEntity">邮件内容</param>
+            <param name="sendServerConfiguration">发送配置</param>
+            <param name="client">客户端对象</param>
+            <param name="sendResultEntity">发送结果</param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailHelper.SmtpClientBaseMessage(MailKit.Net.Smtp.SmtpClient)">
+            <summary>
+            获取SMTP基础信息
+            </summary>
+            <param name="client">客户端对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailMessage">
+            <summary>
+            邮件信息
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailMessage.AssemblyMailMessage(ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity)">
+            <summary>
+            组装邮件文本/附件邮件信息
+            </summary>
+            <param name="mailBodyEntity">邮件消息实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailMessage.SetMailBaseMessage(MimeKit.MimeMessage,ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailBodyEntity)">
+            <summary>
+            设置邮件基础信息
+            </summary>
+            <param name="minMessag"></param>
+            <param name="mailBodyEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailMessage.AssemblyMailTextMessage(System.String,MimeKit.Text.TextFormat)">
+            <summary>
+            组装邮件文本信息
+            </summary>
+            <param name="mailBody">邮件内容</param>
+            <param name="textPartType">邮件类型(plain,html,rtf,xml)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailMessage.AssemblyMailAttachmentMessage(System.String,System.String,System.String)">
+            <summary>
+            组装邮件附件信息
+            </summary>
+            <param name="fileAttachmentType">附件类型(image,application)</param>
+            <param name="fileAttachmentSubType">附件子类型 </param>
+            <param name="fileAttachmentPath">附件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailMessage.CreateMailLog">
+            <summary>
+            创建邮件日志文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation">
+            <summary>
+            邮件服务器基础信息
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation.Authentication">
+            <summary>
+            SMTP服务器支持SASL机制类型
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation.Size">
+            <summary>
+            SMTP服务器对消息的大小
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation.Dsn">
+            <summary>
+            SMTP服务器支持传递状态通知
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation.EightBitMime">
+            <summary>
+            SMTP服务器支持Content-Transfer-Encoding
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation.BinaryMime">
+            <summary>
+            SMTP服务器支持Content-Transfer-Encoding
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.MailServerInformation.UTF8">
+            <summary>
+            SMTP服务器在消息头中支持UTF-8
+            </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendResultEntity">
+            <summary>
+            邮件发送结果
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendResultEntity.ResultInformation">
+            <summary>
+            结果信息
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendResultEntity.ResultStatus">
+            <summary>
+            结果状态
+            </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity">
+            <summary>
+            邮件发送服务器配置
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity.SmtpHost">
+            <summary>
+            邮箱SMTP服务器地址
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity.SmtpPort">
+            <summary>
+            邮箱SMTP服务器端口
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity.IsSsl">
+            <summary>
+            是否启用IsSsl
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity.SenderAccount">
+            <summary>
+            邮箱账号
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit.SendServerConfigurationEntity.SenderPassword">
+            <summary>
+            邮箱密码
+            </summary>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase">
+            <summary>
+            企业微信发送消息的基础消息内容
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase.touser">
+            <summary>
+            UserID列表（消息接收者，多个接收者用‘|’分隔）。特殊情况：指定为@all，则向关注该企业应用的全部成员发送
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase.toparty">
+            <summary>
+            PartyID列表，多个接受者用‘|’分隔。当touser为@all时忽略本参数
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase.totag">
+            <summary>
+            TagID列表，多个接受者用‘|’分隔。当touser为@all时忽略本参数
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase.msgtype">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase.agentid">
+            <summary>
+            企业应用的id，整型。可在应用的设置页面查看
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendBase.safe">
+            <summary>
+            表示是否是保密消息，0表示否，1表示是，默认0
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.CorpSendText.text">
+            <summary>
+            要发送的文本，必须小写，企业微信API不识别大写。
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.Text.content">
+            <summary>
+            要发送的文本内容字段，必须小写，企业微信API不识别大写。
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.QYWeixinHelper.GetQYAccessToken">
+            <summary>
+            获取企业微信的accessToken
+            </summary>
+            <param name="corpid">企业微信ID</param>
+            <param name="corpsecret">管理组密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.QYWeixinHelper.PostWebRequest(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Post数据接口
+            </summary>
+            <param name="postUrl">接口地址</param>
+            <param name="paramData">提交json数据</param>
+            <param name="dataEncode">编码方式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.QYWeixinHelper.SendText(System.String,System.String)">
+            <summary>
+            推送信息
+            </summary>
+            <param name="corpsecret">管理组密钥</param>
+            <param name="paramData">提交的数据json</param>
+            <param name="dataEncode">编码方式</param>
+            <returns></returns>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.uploadfile">
+            <summary>
+            Http上传文件类 - HttpWebRequest封装
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.uploadfile.Execute(ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType)">
+            <summary>
+            上传执行 方法
+            </summary>
+            <param name="parameter">上传文件请求参数</param>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType">
+            <summary>
+            上传文件 - 请求参数类
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType.Url">
+            <summary>
+            上传地址
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType.FileNameKey">
+            <summary>
+            文件名称key
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType.FileNameValue">
+            <summary>
+            文件名称value
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType.Encoding">
+            <summary>
+            编码格式
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType.UploadStream">
+            <summary>
+            上传文件的流
+            </summary>
+        </member>
+        <member name="P:ElsaQuickstarts.Server.DashboardAndServer.Common.SendWeChat.UploadParameterType.PostParameters">
+            <summary>
+            上传文件 携带的参数集合
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.SessionHelper.SetSession(System.String,System.String)">
+            <summary>
+            设置Session
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.SessionHelper.GetSession(System.String)">
+            <summary>
+            获取Session
+            </summary>
+            <param name="key">键</param>
+            <returns>返回对应的值</returns>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils">
+            <summary>
+            通用工具类
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.EncryptWithSHA256(System.Int64,System.String)">
+            <summary>
+            钉钉Robot消息加密
+            加密规则
+            把timestamp+"\n"+密钥当做签名字符串，
+            使用HmacSHA256算法计算签名，
+            然后进行Base64 encode，
+            最后再把签名参数再进行urlEncode，得到最终的签名（需要使用UTF-8字符集）
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.GetTimeStamp">
+            <summary>
+            获取当前时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.SqlFilterString(System.String)">
+            <summary>
+            SQL注入过滤
+            </summary>
+            <param name="InText">要过滤的字符串</param>
+            <returns>过滤掉后的字符串</returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.Replace(System.String,System.String,System.String)">
+            <summary>
+            正则替换字符
+            </summary>
+            <param name="input">要搜索匹配项的字符串</param>
+            <param name="pattern">要匹配的正则表达式模式</param>
+            <param name="replacement">替换字符字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.IsMatch(System.String,System.String)">
+            <summary>
+            是否匹配正则表达式
+            </summary>
+            <param name="input">要匹配的字符串</param>
+            <param name="pattern">要匹配的正则表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.GetMessageBatchNo(System.Int32,System.Int32)">
+            <summary>
+            获取消息批次流水号
+            </summary>
+            <param name="sceneType">场景类型</param>
+            <param name="channelType">渠道类型（支持多渠道）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.IsEmptyList``1(System.Collections.Generic.List{``0})">
+            <summary>
+            是否为空集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.TemplatePlaceholderToDictionary(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            模板占位符转换成字典
+            </summary>
+            <param name="input">要匹配的字符串</param>
+            <param name="paramsDescription">模板参数说明字典</param>
+            <param name="add">添加字典</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.ConvertHeaderToBase64(System.String,System.Text.Encoding)">
+            <summary>
+            解决附件中文名乱码问题
+            </summary>
+            <param name="fileName">文件名称</param>
+            <param name="encoding">字符集编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.ConvertHeaderToBase64(System.String)">
+            <summary>
+            解决附件中文名乱码问题（UTF-8格式）
+            </summary>
+            <param name="fileName">文件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.GetReplaceTemplateData(System.String)">
+            <summary>
+            获取模板需要替换的数据
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.GetSQLSeparation(System.Int32)">
+            <summary>
+            获取SQL分隔符
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Common.Utils.WeiXinHtmlToText(System.String)">
+            <summary>
+             用于处理微信html格式转换文本格式
+            </summary>
+            <param name="input">待转换的HTML文本</param>
+            <returns>纯文本</returns>
+        </member>
+        <member name="T:ElsaQuickstarts.Server.DashboardAndServer.Service">
+            <summary>
+            服务入口
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Service.#ctor(System.String[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="vs"></param>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Service.Start">
+            <summary>
+            开启服务
+            </summary>
+        </member>
+        <member name="M:ElsaQuickstarts.Server.DashboardAndServer.Service.CreateWebHostBuilder(System.String[])">
+            <summary>
+            创建host
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
