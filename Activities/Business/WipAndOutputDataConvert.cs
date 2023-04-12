@@ -24,7 +24,7 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.Business
 
 
         [ActivityInput(Hint = "Source data type", UIHint = ActivityInputUIHints.Dropdown,
-Options = new[] { "Wip", "OutPut"})]
+Options = new[] { "Wip", "OutPut1"})]
         public string DataType
         {
             get; set;
