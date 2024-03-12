@@ -5,6 +5,8 @@
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
     <StartupObject />
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,29 +27,48 @@
     <PackageReference Include="Elsa.Activities.Http" Version="2.4.2.1" />
     <PackageReference Include="Elsa.Activities.Temporal.Quartz" Version="2.4.2.1" />
     <PackageReference Include="Elsa.Designer.Components.Web" Version="2.4.2.1" />
-    <PackageReference Include="Elsa.Persistence.EntityFramework.Oracle" Version="2.4.1" />
-    <PackageReference Include="Elsa.Persistence.EntityFramework.PostgreSql" Version="2.4.1" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.Oracle" Version="2.4.2.1" />
+    <PackageReference Include="Elsa.Persistence.EntityFramework.PostgreSql" Version="2.4.2.1" />
     <PackageReference Include="Elsa.Persistence.EntityFramework.Sqlite" Version="2.4.2.1" />
     <PackageReference Include="Elsa.Persistence.EntityFramework.SqlServer" Version="2.4.2.1" />
     <PackageReference Include="Elsa.Server.Api" Version="2.4.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.11.230815" />
     <PackageReference Include="Nancy" Version="2.0.0" />
+    <PackageReference Include="NLog" Version="4.7.14" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="5.21.4" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Topshelf" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Activities\HTTP\" />
     <Folder Include="JQ\" />
     <Folder Include="Package\" />
     <Folder Include="Pages\logo\" />
+    <Folder Include="Images\" />
     <Folder Include="新文件夹\" />
   </ItemGroup>
 
   <ItemGroup>
     <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="NLog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

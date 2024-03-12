@@ -30,7 +30,7 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.MessageHandling
                 HttpRequestModel request = (HttpRequestModel)context.Input;
                 EndPointRequestBody endPointRequestBody = JsonConvert.DeserializeObject<EndPointRequestBody>(request.Body.ToString());
 
-                //如果包号附件
+                //如果包含附件
                 if (endPointRequestBody.WithAttachments)
                 {
                     resust.response = request.Body.ToString();

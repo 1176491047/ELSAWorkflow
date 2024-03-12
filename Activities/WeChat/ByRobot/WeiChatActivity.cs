@@ -6,6 +6,7 @@ using Elsa;
 using Elsa.Activities.Http.Models;
 using Elsa.ActivityResults;
 using Elsa.Attributes;
+using Elsa.Design;
 using Elsa.Expressions;
 using Elsa.Services;
 using Elsa.Services.Models;
@@ -18,8 +19,9 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat
     /// 企业微信群消息推送
     /// </summary>
     [Activity(
-        Category = "Message Push",
-        Description = "Enterprise WeChat robot settings",
+        Category = "消息推送",
+        DisplayName = "企业微信群聊推送",
+        Description = "通过群聊机器人发送消息",
         Outcomes = new[] { OutcomeNames.Done })]
     public class WeiChatActivity : Activity
     {
@@ -30,10 +32,19 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat
         public string Url { get; set; }
 
         [ActivityInput(
-            Label = "Receivers",
-            Hint = "Message Recipients,Separate with commas, e.g.:user1,user2",
-            SupportedSyntaxes = new[] { SyntaxNames.JavaScript, SyntaxNames.Liquid })]
-        public string Receivers { get; set; }
+            Label = "收件人(手机号)",
+            UIHint = ActivityInputUIHints.MultiText,
+            DefaultSyntax = SyntaxNames.Json,
+            SupportedSyntaxes = new[] { SyntaxNames.Json, SyntaxNames.JavaScript })]
+        public ICollection<string> Receivers { get; set; } = new List<string>();
+
+
+        [ActivityInput(
+            Label = "收件人(用户ID)",
+            UIHint = ActivityInputUIHints.MultiText,
+            DefaultSyntax = SyntaxNames.Json,
+            SupportedSyntaxes = new[] { SyntaxNames.Json, SyntaxNames.JavaScript })]
+        public ICollection<string> ReceiversOfUserId { get; set; } = new List<string>();
 
 
         //[ActivityInput(
@@ -65,11 +76,6 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat
             if (string.IsNullOrWhiteSpace(Url))
                 return Fault("流程中机器人url为空，请配置");
 
-
-            var receivers = string.IsNullOrWhiteSpace(Receivers)
-                ? new List<string>()
-                : Receivers.Split(",").ToList();
-
             var result= WeiXinHelper.SendWeiChatRobotMessage(
                 msgType: (int)WeiXinMsgType.Text,
                 url: Url,
@@ -78,7 +84,8 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat
                 messageUrl: "", 
                 pictureUrl: "",
                 fileType:(int)FileType.file,
-                 receivers
+                 Receivers.ToList(),
+                 ReceiversOfUserId.ToList()
             );
 
             await Task.Delay(TimeSpan.FromMilliseconds(1));

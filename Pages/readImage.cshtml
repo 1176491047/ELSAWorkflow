@@ -1,0 +1,19 @@
+﻿@page "/readImage"
+@using System.Net.Http;
+@using System.IO;
+@using ElsaQuickstarts.Server.DashboardAndServer.Common;
+@inject Microsoft.Extensions.Options.IOptions<ElsaServerUrlInfo> ElsaServerUrlInfos
+@model ElsaQuickstarts.Server.DashboardAndServer.Pages.readImageModel
+@{
+
+    //获取token和mediaId
+    var imageName = Request.Query["imageName"];
+
+    string dateCode = DateTime.Now.ToShortDateString();
+    string imageSrc = $"{ElsaServerUrlInfos.Value.AgentUrl}/Images/{imageName}";
+}
+
+
+<html>
+<img src="@imageSrc" />
+</html>

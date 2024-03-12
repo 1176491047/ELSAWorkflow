@@ -17,6 +17,9 @@ using Elsa.Persistence.EntityFramework.Oracle;
 using ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail;
 using ElsaQuickstarts.Server.DashboardAndServer.Activities.MessageHandling;
 using ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat;
+using ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.ByApplication;
+using System.Runtime;
+using ElsaQuickstarts.Server.DashboardAndServer.Common;
 
 namespace ElsaQuickstarts.Server.DashboardAndServer
 {
@@ -35,6 +38,8 @@ namespace ElsaQuickstarts.Server.DashboardAndServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // 注册配置类到依赖注入容器
+            services.Configure<ElsaServerUrlInfo>(Configuration.GetSection("ELSAServerUrl"));
             var elsaSection = Configuration.GetSection("Elsa");
 
            System.Console.WriteLine(elsaSection["DB"]);
@@ -42,8 +47,8 @@ namespace ElsaQuickstarts.Server.DashboardAndServer
                 .AddElsa(elsa => elsa
                      //.UseEntityFrameworkPersistence(ef => ef.UseSqlite())
                      //.UseEntityFrameworkPersistence(ef=>ef.UseMySql("Server=localhost;Port=3306;Database=elsa;User=root;Password=vsky123;"))
-                     //  .UseEntityFrameworkPersistence(ef=>ef.UsePostgreSql(elsaSection["DB"]))
-                     .UseEntityFrameworkPersistence(ef=>ef.UseSqlServer(elsaSection["DB"]))
+                     .UseEntityFrameworkPersistence(ef=>ef.UsePostgreSql(elsaSection["DB"]))
+                    // .UseEntityFrameworkPersistence(ef=>ef.UseSqlServer(elsaSection["DB"]))
                     //.UseEntityFrameworkPersistence(ef => ef.UseOracle(elsaSection["DB"]))
                     .AddConsoleActivities()
                     .AddEmailActivities(elsaSection.GetSection("Smtp").Bind)
@@ -54,12 +59,15 @@ namespace ElsaQuickstarts.Server.DashboardAndServer
                     .AddActivitiesFrom<SendMailWithSMTPConfig>()
                     .AddActivitiesFrom<WeiChatActivity>()
                     .AddActivitiesFrom<WeiChatActivityWithContentType>()
+                    .AddActivitiesFrom<WeiChatActivityByApplication>()
                     //注册定期调用包含基于时间的活动的工作流的托管服务。
-                    .AddQuartzTemporalActivities()  
-                    //.AddWorkflowsFrom<HeartbeatWorkflow>()
+                    .AddQuartzTemporalActivities()
+                    .AddWorkflowsFrom<ImageCleanWorkflow>()
+                    .AddWorkflowsFrom<WorkflowInstanseCleanJob>()
                     .AddWorkflowsFrom<Startup>()
                 );
             services.AddSession();
+
 
             // Elsa API endpoints.
             services.AddElsaApiEndpoints();

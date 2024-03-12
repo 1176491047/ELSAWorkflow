@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Elsa;
 using Elsa.Activities.Email;
 using Elsa.Activities.Email.Options;
 using Elsa.Activities.Email.Services;
@@ -18,14 +19,23 @@ using Elsa.Providers.WorkflowStorage;
 using Elsa.Serialization;
 using Elsa.Services;
 using Elsa.Services.Models;
+using ElsaQuickstarts.Server.DashboardAndServer.Common;
 using ElsaQuickstarts.Server.DashboardAndServer.Common.MailKit;
 using Microsoft.Extensions.Options;
 using MimeKit;
+using Newtonsoft.Json;
 
 namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail
 {
+    [Action(
+        Category = "消息推送",
+        DisplayName = "发送邮件(支持单独配置)",
+        Description = "可在流程节点内部配置SMTP信息",
+        Outcomes = new[] { OutcomeNames.Done }
+    )]
     public class SendMailWithSMTPConfig : Activity
     {
+        private Logger aLogger;
         private readonly ISmtpService _smtpService;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IContentSerializer _contentSerializer;
@@ -34,6 +44,7 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail
         public SendMailWithSMTPConfig(ISmtpService smtpService, IOptions<SmtpOptions> options, IHttpClientFactory httpClientFactory, IContentSerializer contentSerializer)
         {
             _smtpService = smtpService;
+            aLogger = Logger.Default;
             _httpClientFactory = httpClientFactory;
             _contentSerializer = contentSerializer;
             _options = options.Value;
@@ -243,11 +254,22 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail
                 SenderAddress = from,     //发件人
             };
 
+            aLogger.Info($"mailBodyEntity：{JsonConvert.SerializeObject(mailBodyEntity)}", "邮件发送日志");
+            aLogger.Info($"mailServerConfig：{JsonConvert.SerializeObject(mailServerConfig)}", "邮件发送日志");
             var result = MailHelper.SendMail(mailBodyEntity, mailServerConfig);
+            aLogger.Info($"发送结果：{JsonConvert.SerializeObject(result)}", "邮件发送日志");
+
+            
 
             //await _smtpService.SendAsync(context, message, context.CancellationToken);
-
-            return Done();
+            if (result.ResultStatus)
+            {
+                return Done();
+            }
+            else
+            {
+                return Fault(new Exception(result.ResultInformation));
+            }
         }
 
         private async Task AddAttachmentsAsync(BodyBuilder bodyBuilder, CancellationToken cancellationToken, string fileLastName)

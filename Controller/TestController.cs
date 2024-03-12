@@ -55,7 +55,7 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.新文件夹
 
             string touser = "Kiaka";
             QYWeixinHelper qYWeixinHelper = new QYWeixinHelper(_configuration, _httpContextAccessor);
-            qYWeixinHelper.SendText("ZhangJiaQi","123");
+            qYWeixinHelper.SendText("WangShanShan|ZhangJiaQi","测试消息");
         }
 
 

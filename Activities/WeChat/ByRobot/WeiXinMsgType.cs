@@ -35,7 +35,9 @@ namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat
         /// <summary>
         /// 模版卡片类型
         /// </summary>
-        TemplateCard
+        TemplateCard,
+
+        MPNNews
     }
 
     public enum FileType

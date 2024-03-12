@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Elsa;
 using Elsa.Activities.Email;
 using Elsa.Activities.Email.Options;
 using Elsa.Activities.Email.Services;
@@ -22,6 +23,12 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 namespace ElsaQuickstarts.Server.DashboardAndServer.Activities.SendMail
 {
+    [Action(
+        Category = "消息推送",
+        DisplayName = "发送邮件",
+        Description = "读取内部SMTP配置发送邮件",
+        Outcomes = new[] { OutcomeNames.Done }
+    )]
     public class SendMail : Activity
     {
         private readonly ISmtpService _smtpService;

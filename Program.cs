@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Elsa.Activities.Primitives;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -107,11 +109,10 @@ namespace ElsaQuickstarts.Server.DashboardAndServer
         {
             var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).Build();
-
             return WebHost.CreateDefaultBuilder(args)
                     .UseKestrel()
-                    .UseConfiguration(config)
                     .UseUrls(config["Url"])
+                    .UseConfiguration(config)
                     .UseStartup<Startup>();
         }
     }
