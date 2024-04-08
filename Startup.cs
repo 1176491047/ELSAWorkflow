@@ -20,6 +20,7 @@ using ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat;
 using ElsaQuickstarts.Server.DashboardAndServer.Activities.WeChat.ByApplication;
 using System.Runtime;
 using ElsaQuickstarts.Server.DashboardAndServer.Common;
+using ElsaQuickstarts.Server.DashboardAndServer.Activities.DingdingMessage;
 
 namespace ElsaQuickstarts.Server.DashboardAndServer
 {
@@ -45,10 +46,10 @@ namespace ElsaQuickstarts.Server.DashboardAndServer
            System.Console.WriteLine(elsaSection["DB"]);
             services
                 .AddElsa(elsa => elsa
-                     //.UseEntityFrameworkPersistence(ef => ef.UseSqlite())
-                     //.UseEntityFrameworkPersistence(ef=>ef.UseMySql("Server=localhost;Port=3306;Database=elsa;User=root;Password=vsky123;"))
-                     .UseEntityFrameworkPersistence(ef=>ef.UsePostgreSql(elsaSection["DB"]))
-                    // .UseEntityFrameworkPersistence(ef=>ef.UseSqlServer(elsaSection["DB"]))
+                    //.UseEntityFrameworkPersistence(ef => ef.UseSqlite())
+                    //.UseEntityFrameworkPersistence(ef=>ef.UseMySql("Server=localhost;Port=3306;Database=elsa;User=root;Password=vsky123;"))
+                    // .UseEntityFrameworkPersistence(ef=>ef.UsePostgreSql(elsaSection["DB"]))
+                     .UseEntityFrameworkPersistence(ef=>ef.UseSqlServer(elsaSection["DB"]))
                     //.UseEntityFrameworkPersistence(ef => ef.UseOracle(elsaSection["DB"]))
                     .AddConsoleActivities()
                     .AddEmailActivities(elsaSection.GetSection("Smtp").Bind)
@@ -58,6 +59,7 @@ namespace ElsaQuickstarts.Server.DashboardAndServer
                     .AddActivitiesFrom<SendMail>()
                     .AddActivitiesFrom<SendMailWithSMTPConfig>()
                     .AddActivitiesFrom<WeiChatActivity>()
+                    .AddActivitiesFrom<DingdingMessageActivity>()
                     .AddActivitiesFrom<WeiChatActivityWithContentType>()
                     .AddActivitiesFrom<WeiChatActivityByApplication>()
                     //注册定期调用包含基于时间的活动的工作流的托管服务。

@@ -43,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Activities\DingdingMessage\CommonTool\UploadMedia\" />
     <Folder Include="Activities\HTTP\" />
     <Folder Include="JQ\" />
     <Folder Include="Package\" />
